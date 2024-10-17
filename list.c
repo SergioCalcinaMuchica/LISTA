@@ -54,3 +54,25 @@ void deleteList(struct Node** headPtr){
   }
 }
 
+int pop(struct Node** headPtr){
+  assert(headPtr);
+  assert(*headPtr);
+  struct Node* current = *headPtr;
+  *headPtr = (*headPtr)->next;
+  int data = current->data;
+  free(current);
+  return data;
+}
+
+void insertNth(struct Node** headPtr,int index, int data){
+  assert(index <= length(*headPtr));
+
+  struct Node* newNode = malloc(sizeof(struct Node));
+  newNode -> data = data;
+  
+  struct NOde** current = headPtr;
+  while(*current){
+    current = &((*current)->next);
+  }
+}
+
